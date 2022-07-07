@@ -27,3 +27,11 @@ class: middle, left
 2. Express Intent
 3. No Duplication
 4. Small
+
+---
+## Plan
+
+1. Pair Up
+2. Discuss focus
+3. Implement Conways Game of Life
+4. Reflect
