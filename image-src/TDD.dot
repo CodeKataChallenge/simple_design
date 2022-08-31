@@ -1,0 +1,10 @@
+// circo -Tsvg image-src/TDD.dot > docs/image/TDD.svg
+digraph TDD {
+    node [shape=circle, style=filled, fixedsize=true, width=1];
+    Red [color=red, fillcolor=red];
+    Green [color=green, fillcolor=green,];
+    Refactor [color=orange, fillcolor=orange];
+    Red -> Green;
+    Green -> Refactor;
+    Refactor -> Red;
+}
