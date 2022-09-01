@@ -29,7 +29,7 @@ class: middle, left
 ---
 ## Test Driven Development
 
-![Various phases of Test Driven Development](https:://codekatachallenge.github.io/simple_design/image/TDD.svg)
+![Various phases of Test Driven Development](https://codekatachallenge.github.io/simple_design/image/TDD.svg)
 
 ---
 ## Plan
