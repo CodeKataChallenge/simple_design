@@ -7,7 +7,7 @@ The universe of the Game of Life consists of a square grid of _cells_. Each cell
 
 1. Any live cell with two or three neighbours survives and stays alive
 2. Any dead cell with exactly three neighbours become alive
-3. All other cells don't change state
+3. All other live cells die, all other dead cells stay dead
 
 [wikipedia:cellular-automaton]: https://en.wikipedia.org/wiki/Cellular_automaton
 [wikipedia:life]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
