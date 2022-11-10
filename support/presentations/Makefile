@@ -1,7 +1,7 @@
 .PHONY: all, clean
 
 SOURCE_DIR=src
-BUILD_DIR=../../docs/presentation/js
+BUILD_DIR=../../docs/js
 SOURCE=${SOURCE_DIR}/Presentations.elm
 ELM_CODE=$(shell find ${SOURCE_DIR} -name '*.elm')
 TARGET=${BUILD_DIR}/p.js
