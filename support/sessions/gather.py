@@ -2,26 +2,29 @@ import json
 import os
 
 class Sessions:
-    def __init__(self, directory):
-        self.directory = directory
+    def __init__(self, base, sub_directory):
+        self.base = base
+        self.sub_directory = sub_directory
 
     def structure(self):
-
         return sorted(
-            [Session(session) for session in os.listdir(self.directory) if os.path.isdir(os.path.join(self.directory, session)) and session.startswith('session')],
+            [Session(self.sub_directory, session) for session in os.listdir(self.directory()) if os.path.isdir(os.path.join(self.directory(), session)) and session.startswith('session')],
             key = lambda s: s.index
         )
 
+    def directory(self):
+        return os.path.join(self.base, self.sub_directory)
+
 class Session:
-    def parse(input):
-        url = os.path.join(input, "index.html")
+    def parse(directory, input):
+        url = os.path.join(directory, input, "index.html")
         parts = input.split('-')
         index = int(parts[1])
         name = parts[0].capitalize() + ' ' + str(index + 1)
         return {'name': name, 'url': url, 'index': index}
 
-    def __init__(self, input):
-        structure = Session.parse(input)
+    def __init__(self, directory,  input):
+        structure = Session.parse(directory, input)
         self.name = structure['name']
         self.url = structure['url']
         self.index = structure['index']
@@ -40,8 +43,7 @@ class SessionEncoder(json.JSONEncoder):
 
 if __name__ == '__main__':
     directory = '../../docs/'
-    sessions_directory = directory + 'presentation/'
-    sessions = Sessions(sessions_directory)
+    sessions = Sessions(directory, 'presentation/')
     output = json.dumps(sessions, cls=SessionEncoder)
 
     f = open(os.path.join(directory, 'presentations.json'), 'w')
